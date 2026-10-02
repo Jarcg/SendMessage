@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_margin="15dp"
+    >
+    <!-- Colores, dimens, botones etc -->
+
+    <!-- SP es lo mismo que dp pero se ajusta al tamaño que tenga el usuario.-->
+    <TextView
+
+        android:id="@+id/tvTitlle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/etmessage"
+        android:fontFamily="@font/emily_street"
+        android:background="@color/purple_200"
+        />
+
+    <!-- La etiqueta hint es la que sirve para los videntes  -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btsend"
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:contentDescription="@string/btmessage"
+        android:text="@string/btmessage" />
+
+
+
+    <EditText
+        android:id="@+id/etMessageText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="@string/etmessage2"
+
+        android:hint="@string/etmessage2"
+
+        android:autofillHints="name"
+        />
+</LinearLayout>
+

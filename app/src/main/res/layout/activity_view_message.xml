@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_marginTop="125dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ViewMessageActivity"
+    tools:ignore="UseCompoundDrawables">
+
+    <TextView
+        android:id="@+id/tvTitleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/etMessageView"
+        android:hint="@string/tvTittleView"
+        />
+
+    <TextView
+        android:id="@+id/tvTittleContentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvTittleContentView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/iVMessageSize"
+        android:contentDescription="@string/iVMessageDescrip"
+        android:background="@color/purple_200"
+        app:srcCompat="@drawable/baseline_message_24" />
+
+</LinearLayout>
