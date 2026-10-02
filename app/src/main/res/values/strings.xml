@@ -49,7 +49,7 @@
     </string>
     <string name="title_activity_view_message">ViewMessageActivity</string>
     <string name="etMessageView">This is example text</string>
-    <string name="iVMessageDescrip">This is a description\n</string>
-    <string name="tvTittleView">This other example\n</string>
-    <string name="tvTittleContentView">\"Example 1\"</string>
+    <string name="iVMessageDescrip">This is a description</string>
+    <string name="tvTitleView">This other example</string>
+    <string name="tvTitleContentView">Example 1</string>
 </resources>

@@ -16,14 +16,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/etMessageView"
-        android:hint="@string/tvTittleView"
+        android:hint="@string/tvTitleView"
         />
 
     <TextView
         android:id="@+id/tvTittleContentView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tvTittleContentView" />
+        android:text="@string/tvTitleContentView" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -3,7 +3,6 @@ package com.example.sendmessage
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sendmessage.model.Message
@@ -13,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 /**
  * Esto es la primera actividad de la aplicación que realiza la operaciones:
  * <ol>
- *     <li>Crear un componente <code> EditText</code> y BUtton en XML</li>
+ *     <li>Crear un componente <code> EditText</code> y Button en XML</li>
  *     <li>Crear el <code>Intent</code> con el <code>Bundle</code> para pasar a otra actividad</li>
  *     <li>El ciclo de vida de la Activity </li>
  *     <li> Ver la pila de Actividades </li>
@@ -28,11 +27,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class SendMessageActivity : AppCompatActivity() {
-    //Solo se puede inicializar en aquí para que lo tenga toda la clase
+    //Solo se puede inicializar aquí para que lo tenga toda la clase
     //Lo que dice es que la inicialización será posterior
     lateinit var etMessageText : EditText
-    lateinit var btSend: FloatingActionButton
-    //Esto es un objeto singlenton sirve para hacer algo comun y no duplicar.
+    lateinit var btSend: FloatingActionButton //Gracias a esto podemos incrustar imágenes en el botón, si hubiéramos puesto button no podríamos.
+    //Esto es un objeto singleton sirve para hacer algo común y no duplicar.
     companion object{
         const val TAG: String = "LogSendMessageActivity"
     }
@@ -51,9 +50,9 @@ class SendMessageActivity : AppCompatActivity() {
         /*
              btSend.setOnClickListener {
 
-                 ES como escribir el nombre del destinatario
+                 Es como escribir el nombre del destinatario
                  val intent = Intent(this, ViewMessageActivity::class.java)
-                 Este es lo que quieres meter las cosas  en el sobre
+                 Este es lo que quieres meter las cosas en el sobre
                  val bundle = Bundle()
                  bundle.putString("KEY_MESSAGE",etMessageText.text.toString())
                  Le agregamos el objeto
@@ -66,14 +65,13 @@ class SendMessageActivity : AppCompatActivity() {
         }
 
          */
-        //Se escriben mensaje de depuración en la consola LogCat
         btSend.setOnClickListener {
             sendMessage()
         }
 
     }
     /*
-    Función que crea un mensaje con la información de la persona que envia y de la persona
+    Función que crea un mensaje con la información de la persona que envía y de la persona
     que debe recoger el mensaje
      */
     private fun sendMessage(){
@@ -89,40 +87,40 @@ class SendMessageActivity : AppCompatActivity() {
         bundle.putSerializable("KEY_MESSAGE",message)
         intent.putExtras(bundle)
         startActivity(intent)
-        //QUe se envie este mensaje de maria con el nombre y la información
+        //Que se envíe este mensaje de maria con el nombre y la información
     }
     //region Ciclo de Vida de una Actividad
     override fun onStart() {
         super.onStart()
-        Log.d(TAG,"SendMenssageActivity -> onStart()")
+        Log.d(TAG,"SendMessageActivity -> onStart()")
 
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG,"SendMenssageActivity -> onStop()")
+        Log.d(TAG,"SendMessageActivity -> onStop()")
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG,"SendMenssageActivity -> onDestroy()")
+        Log.d(TAG,"SendMessageActivity -> onDestroy()")
 
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG,"SendMenssageActivity -> onResume()")
+        Log.d(TAG,"SendMessageActivity -> onResume()")
 
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG,"SendMenssageActivity -> onPause()")
+        Log.d(TAG,"SendMessageActivity -> onPause()")
 
     }
     //endregion
     //Cosas que hemos hecho:
-    // Crear component objet y serializar y pacelar
-    //Serializar se envia de bit a bit
+    // Crear component objet y serializar y parcelar
+    //serializar se envía de bit a bit
 }

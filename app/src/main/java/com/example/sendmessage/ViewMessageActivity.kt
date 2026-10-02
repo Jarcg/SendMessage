@@ -10,9 +10,9 @@ import com.example.sendmessage.model.Message
 
 class ViewMessageActivity : AppCompatActivity() {
     companion object{
-        const val TAG: String = "LogViewMessageActivity"
+        const val TAG: String = "LogViewMessageActivity" //De esta manera podemos cambiarlo de forma más cómoda y sin tener duplicados.
     }
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU) //Lo implementa el IDEA para que funcione el serializer.
     /**
      * Método llamado al crear la actividad. Se encarga de inicializar la interfaz de usuario,
      * enlazar los componentes visuales y configurar los eventos de clic.
@@ -26,20 +26,22 @@ class ViewMessageActivity : AppCompatActivity() {
      * startActivity(intent)
      * ```
      *
-     * @param savedInstanceState Estado guardado previamente de la actividad, si lo hubiera.
+     * @param savedInstanceState Estado guardado previamente de la actividad, si lo hubiera. (Probando comentarios con IA como dijimos en clase)
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_view_message)
 
-        val tvTitleView = findViewById<TextView>(R.id.tvTitleView)
-        val tvTittleContentView = findViewById<TextView>(R.id.tvTittleContentView)
-        val bundle = this.intent.extras
-        val message = bundle?.getSerializable("KEY_MESSAGE", Message::class.java)
+        val tvTitleView = findViewById<TextView>(R.id.tvTitleView) //Gracias a esto podemos acceder a las propiedades del tvTitleView.
+        val tvTittleContentView = findViewById<TextView>(R.id.tvTittleContentView) //Gracias a esto podemos acceder a las propiedades del tvTittleContentView.
+        val bundle = this.intent.extras //Lo que hacemos es recoger el bundle del intent que ya lo tenemos pasado.
+        val message = bundle?.getSerializable("KEY_MESSAGE", Message::class.java) //Serializamos, comprobando que si es nulo no lo haga para no comernos una excepción.
+        //Lo recogemos
         val emisor = message?.sender
         val receptor = message?.receiver
         val contenido = message?.content
+        //Le asignamos el texto a la vista.
         tvTitleView.text = emisor?.name.toString()
         tvTittleContentView.text = contenido
 

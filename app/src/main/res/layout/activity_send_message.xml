@@ -7,12 +7,12 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:layout_margin="15dp"
     >
-    <!-- Colores, dimens, botones etc -->
+    <!-- Colores, dimens, botones etc. -->
 
-    <!-- SP es lo mismo que dp pero se ajusta al tamaño que tenga el usuario.-->
+    <!-- SP es lo mismo que dp, pero se ajusta al tamaño que tenga el usuario.-->
     <TextView
 
-        android:id="@+id/tvTitlle"
+        android:id="@+id/tvTitle"
         android:textColor="@color/white"
         android:textSize="@dimen/tvTitle"
         android:layout_width="match_parent"

@@ -1,6 +1,5 @@
 package com.example.sendmessage.model
 
-import android.widget.EditText
 import  java.io.Serializable
 data class Message (
     val id: Int,
@@ -10,4 +9,4 @@ data class Message (
 ) : Serializable
 
 
-// Mensaje [ id , cadena Persona que envie, Persona que recibe] Sector
+// Mensaje [id, cadena Persona que envíe, Persona que recibe] Sector
