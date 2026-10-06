@@ -84,7 +84,8 @@ class SendMessageActivity : AppCompatActivity() {
         val message = Message(1,etMessageText.text.toString(),sender,receiver)
 
         //No es recomendable
-        bundle.putSerializable("KEY_MESSAGE",message)
+        //bundle.putSerializable("KEY_MESSAGE",message)
+        bundle.putParcelable("KEY_MESSAGE",message)
         intent.putExtras(bundle)
         startActivity(intent)
         //Que se envíe este mensaje de maria con el nombre y la información

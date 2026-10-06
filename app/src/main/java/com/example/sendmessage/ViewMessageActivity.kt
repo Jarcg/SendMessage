@@ -36,15 +36,21 @@ class ViewMessageActivity : AppCompatActivity() {
         val tvTitleView = findViewById<TextView>(R.id.tvTitleView) //Gracias a esto podemos acceder a las propiedades del tvTitleView.
         val tvTittleContentView = findViewById<TextView>(R.id.tvTittleContentView) //Gracias a esto podemos acceder a las propiedades del tvTittleContentView.
         val bundle = this.intent.extras //Lo que hacemos es recoger el bundle del intent que ya lo tenemos pasado.
-        val message = bundle?.getSerializable("KEY_MESSAGE", Message::class.java) //Serializamos, comprobando que si es nulo no lo haga para no comernos una excepción.
+       //val message = bundle?.getSerializable("KEY_MESSAGE", Message::class.java) //Serializamos, comprobando que si es nulo no lo haga para no comernos una excepción.
         //Lo recogemos
+        //val emisor = message?.sender
+        //val receptor = message?.receiver
+        //val contenido = message?.content
+        //Le asignamos el texto a la vista.
+        //tvTitleView.text = emisor?.name.toString()
+        //tvTittleContentView.text = contenido
+        val message = bundle?.getParcelable("KEY_MESSAGE", Message::class.java)
         val emisor = message?.sender
         val receptor = message?.receiver
         val contenido = message?.content
         //Le asignamos el texto a la vista.
         tvTitleView.text = emisor?.name.toString()
         tvTittleContentView.text = contenido
-
 
 
     }

@@ -12,10 +12,12 @@ navigationFragmentKtx = "2.6.0"
 navigationUiKtx = "2.6.0"
 lifecycleRuntimeKtx = "2.11.0"
 activityCompose = "1.13.0"
-kotlin = "2.2.10"
 composeBom = "2026.02.01"
 dokka = "2.2.0"
 libsaboutus = "0.3.0"
+kotlin = "2.4.20"
+parcelize = "2.4.20"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -42,6 +44,4 @@ aboutus = {group = "com.github.jrvansuita", name="MaterialAbout", version.ref= "
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
-
-
-
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "parcelize" }
