@@ -6,10 +6,10 @@ Aplicación nativa para Android desarrollada en **Kotlin** que ilustra la arquit
 
 ## 📸 Capturas de Pantalla en el Emulador (Obligatorio)
 
-| Pantalla Principal (`SendMessageActivity`) | Pantalla de Visualización (`ViewMessageActivity`) |
-| :----------------------------------------: | :-----------------------------------------------: |
-| ![SendMessageActivity](docs/screenshots/send_message_activity.png) | ![ViewMessageActivity](docs/screenshots/view_message_activity.png) |
-| *Ingreso del texto del mensaje y botón de envío* | *Recepción y despliegue del mensaje enviado* |
+|             Pantalla Principal (`SendMessageActivity`)             |            Pantalla de Visualización (`ViewMessageActivity`)            |
+|:------------------------------------------------------------------:|:-----------------------------------------------------------------------:|
+| ![SendMessageActivity](docs/screenshots/send_message_activity.png) | ![ViewMessageActivity](docs/screenshots/view_send_message_activity.png) |
+|          *Ingreso del texto del mensaje y botón de envío*          |              *Recepción y despliegue del mensaje enviado*               |
 
 > 💡 **Flujo de Usuario**: El usuario escribe un texto en el campo `EditText` de la actividad principal. Al presionar el botón **Enviar**, se crea un `Intent` explícito con un `Bundle` que contiene el mensaje y navega a la segunda actividad para mostrarlo.
 
