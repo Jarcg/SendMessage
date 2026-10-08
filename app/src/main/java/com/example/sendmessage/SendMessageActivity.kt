@@ -20,6 +20,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
  *
  * @author Jacinto Rafael Cortés
  * @version 1.0
+ * @property etMessageText Campo de entrada donde el usuario escribe el texto del mensaje.
+ * @property btSend Botón flotante (FAB) que dispara el envío del mensaje.
  * @see android.widget.EditText
  * @see Bundle
  * @see Intent
@@ -36,12 +38,13 @@ class SendMessageActivity : AppCompatActivity() {
         const val TAG: String = "LogSendMessageActivity"
     }
     /**
-     * Método de creación de una actividad.
-     * @param Bundle
+     * Infla el layout de la pantalla, enlaza las vistas y configura el listener de envío del mensaje.
      *
+     * @param savedInstanceState Estado guardado previamente de la actividad, o `null` si es su primera creación.
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG,"SendMessageActivity -> onCreate()")
         setContentView(R.layout.activity_send_message) //Estamos asignando un layout a la vista
         //Se obtiene el objeto view de la vista que se ha inflado.
         etMessageText = findViewById(R.id.etMessageText)
@@ -70,9 +73,10 @@ class SendMessageActivity : AppCompatActivity() {
         }
 
     }
-    /*
-    Función que crea un mensaje con la información de la persona que envía y de la persona
-    que debe recoger el mensaje
+    /**
+     * Construye un `Intent` explícito con un `Message` parcelable y navega a `ViewMessageActivity`.
+     *
+     * @return No retorna valor; lanza la actividad de destino con el Bundle `KEY_MESSAGE`.
      */
     private fun sendMessage(){
         //1. Crear el Intent

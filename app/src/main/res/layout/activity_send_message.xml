@@ -1,48 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+    Estructura canónica con CoordinatorLayout (sin margins manuales):
+      1. CoordinatorLayout (raíz) + fitsSystemWindows -> separa el contenido de la barra de estado.
+      2. AppBarLayout -> aloja la barra superior (aquí, la cabecera tvTitle).
+      3. Contenido con app:layout_behavior -> queda SIEMPRE debajo del AppBarLayout.
+-->
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:layout_margin="15dp"
-    >
-    <!-- Colores, dimens, botones etc. -->
+    android:fitsSystemWindows="true">
 
-    <!-- SP es lo mismo que dp, pero se ajusta al tamaño que tenga el usuario.-->
-    <TextView
-
-        android:id="@+id/tvTitle"
-        android:textColor="@color/white"
-        android:textSize="@dimen/tvTitle"
+    <!-- Barra superior de la pantalla -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/etmessage"
-        android:fontFamily="@font/emily_street"
-        android:background="@color/purple_200"
-        />
+        android:background="@color/purple_200">
 
-    <!-- La etiqueta hint es la que sirve para los videntes  -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btsend"
+        <!-- Colores, dimens, botones etc. -->
+        <!-- SP es lo mismo que dp, pero se ajusta al tamaño que tenga el usuario.-->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200"
+            android:fontFamily="@font/emily_street"
+            android:text="@string/etmessage"
+            android:textColor="@color/white"
+            android:textSize="@dimen/tvTitle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Contenido: queda debajo de la barra automáticamente; el padding es espacio
+         interno del área de contenido, no un margen para esquivar la barra. -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="121dp"
-        android:contentDescription="@string/btmessage"
-        android:text="@string/btmessage" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btsend"
+            android:layout_width="match_parent"
+            android:layout_height="121dp"
+            android:contentDescription="@string/btmessage"
+            android:text="@string/btmessage" />
 
-
-    <EditText
-        android:id="@+id/etMessageText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:text="@string/etmessage2"
-
-        android:hint="@string/etmessage2"
-
-        android:autofillHints="name"
-        />
-</LinearLayout>
-
+        <EditText
+            android:id="@+id/etMessageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="name"
+            android:ems="10"
+            android:hint="@string/etmessage2"
+            android:inputType="text"
+            android:text="@string/etmessage2" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

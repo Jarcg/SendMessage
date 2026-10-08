@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Lo de las tradiciones es lo importante-->
+    <string name="app_name">sendMenssage</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="etmessage">message</string>
+    <string name="etmessage1">message 1</string>
+    <string name="etmessage2">message 2</string>
+
+    <string name="btmessage">Enviar</string>
+
+    <string name="title_activity_view_message">ViewMessageActivity</string>
+    <string name="etMessageView">This is example text</string>
+    <string name="iVMessageDescrip">This is a description</string>
+    <string name="tvTitleView">This other example</string>
+    <string name="tvTitleContentView">Example 1</string>
+</resources>

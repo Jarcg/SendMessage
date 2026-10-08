@@ -10,6 +10,8 @@ El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1
 
 ### Añadido
 - Documentación inicial del repositorio mediante archivos `README.md` y `CHANGELOG.md`.
+- **`AGENTS.md`**: archivo de instrucciones para agentes de IA (OpenCode) con la estructura de directorios, comandos exactos de Gradle (build, lint, tests, Dokka), distinción `namespace` (`com.example.sendmessage`) vs. `applicationId` (`com.example.sendmenssage`), flujo de navegación `Intent`/`Bundle` (`KEY_MESSAGE`), restricción de probar en API 33+, notas del flujo de documentación en GitHub Pages y convenciones del repositorio (idioma español, skills en `.opencode/skills/`).
+- **Internacionalización (i18n)**: traducción al inglés de las cadenas de la interfaz en `app/src/main/res/values-en/strings.xml`, manteniendo el español como idioma base por defecto en `app/src/main/res/values/strings.xml` (mismos nombres de recurso en ambos archivos).
 
 ---
 

@@ -8,6 +8,12 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sendmessage.model.Message
 
+/**
+ * Actividad de destino que recupera el mensaje del `Bundle` del Intent y lo muestra en pantalla.
+ *
+ * Recibe el objeto `Message` serializado con `@Parcelize` bajo la clave `KEY_MESSAGE`
+ * y despliega emisor y contenido en las vistas del layout.
+ */
 class ViewMessageActivity : AppCompatActivity() {
     companion object{
         const val TAG: String = "LogViewMessageActivity" //De esta manera podemos cambiarlo de forma más cómoda y sin tener duplicados.
@@ -30,6 +36,7 @@ class ViewMessageActivity : AppCompatActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d(TAG,"ViewMessageActivity -> onCreate()")
 
         setContentView(R.layout.activity_view_message)
 
